@@ -1,0 +1,6 @@
+{
+  "name": "KAPETZ AI",
+  "description": "Exotic Pet Care Assistant with species care sheets, AI expert chat, care reminders, and husbandry checklists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
