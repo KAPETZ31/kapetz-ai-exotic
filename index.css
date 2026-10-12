@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-obsidian: #090C12;
+  --surface-dark: #101520;
+  --surface-slate: #181F2E;
+  --electric-blue: #00E5FF;
+  --electric-glow: #38EFFF;
+  --silver-text: #E2E8F0;
+  --silver-muted: #94A3B8;
+  --border-subtle: #232D3F;
+  --hazard-red: #FF3366;
+  --warning-orange: #FF9100;
+  --verified-green: #00E676;
+  --molt-purple: #B388FF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-obsidian);
+  color: var(--silver-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090C12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232D3F;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00E5FF;
+}
+
+/* Custom glow utility */
+.glow-blue {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+}
+
+.glow-blue-sm {
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+}
+
+.glow-border {
+  border: 1px solid rgba(0, 229, 255, 0.4);
+}
