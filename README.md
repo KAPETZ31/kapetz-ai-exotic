@@ -1,22 +1,82 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# KAPETZ AI — Exotic Pet Care Assistant (Web Version)
 
-# Run and deploy your AI Studio app
+A responsive, mobile-first web application built with **React**, **TypeScript**, and **Vite**, featuring scientific care sheets, AI chat, enclosure engineering guides, and care tracking for exotic pet keepers.
 
-This contains everything you need to run your app locally.
+## 🦂 Brand Identity
+- **Original KAPETZ Scorpion Logo:** Preserves the circular emblem, scorpion silhouette, and stylized KAPETZ wordmark.
+- **Color Palette:** Dark Obsidian (`#090C12`), Dark Charcoal (`#101520`), Metallic Silver (`#E2E8F0`), and Electric Blue (`#00E5FF`).
 
-View your app in AI Studio: https://ai.studio/apps/588b105d-a380-4c0f-8895-daa7c6e51768
+## 🌐 Supported Languages
+- English (EN)
+- Filipino / Tagalog (TL) with instant bilingual switcher.
 
-## Run Locally
+## 📂 Project Structure
+```text
+/web
+├── index.html                   # HTML entry point with meta tags & fonts
+├── package.json                 # Project dependencies & scripts
+├── tsconfig.json                # TypeScript compiler configuration
+├── tsconfig.node.json           # Vite node configuration
+├── vite.config.ts               # Vite bundler configuration
+├── vercel.json                  # Vercel static deployment rules
+├── netlify.toml                 # Netlify static deployment rules
+├── .env.example                 # Environment variables template
+├── public/
+│   ├── logo.jpg                 # Original KAPETZ scorpion emblem
+│   └── hero.jpg                 # Terrarium panorama banner
+└── src/
+    ├── main.tsx                 # React entry point
+    ├── App.tsx                  # Main application container & view routing
+    ├── index.css                # Obsidian & electric-blue design system
+    ├── types/
+    │   └── index.ts             # TypeScript interfaces for species & care data
+    ├── data/
+    │   ├── speciesData.ts       # Scientific care sheets for all 4 categories
+    │   └── guidesData.ts        # Enclosure guides & daily husbandry tasks
+    ├── services/
+    │   └── aiService.ts         # Secure server-side AI integration & fallback engine
+    ├── utils/
+    │   └── translations.ts      # English and Tagalog localization dictionaries
+    └── components/
+        ├── Navbar.tsx           # Brand navigation & language toggle
+        ├── Footer.tsx           # Safety pledge & hosting instructions
+        ├── VeterinaryDisclaimer.tsx # Medical & safety advisory
+        ├── SpeciesCard.tsx      # Species card with microclimate stats
+        ├── SpeciesDetailModal.tsx # Full 17-section care sheet modal
+        ├── SpeciesCompare.tsx   # Side-by-side species comparison
+        ├── EnclosureGuides.tsx  # Step-by-step equipment setup guides
+        ├── CareChecklist.tsx    # Daily & weekly husbandry tasks
+        ├── AiChatAssistant.tsx  # Interactive AI chat assistant with prompt chips
+        └── MyPetsRegistry.tsx   # Local user pet registry & calculated alerts
+```
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+## 🚀 How to Run Locally
+1. Navigate into the web directory:
+   ```bash
+   cd web
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+4. Open `http://localhost:3000` in your browser.
 
+## 📦 How to Build for Production
+```bash
+npm run build
+```
+This generates a production-ready, minified static distribution inside the `dist/` directory.
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
-7. If you have already published your app in AI Studio, please [request upload key reset](https://support.google.com/googleplay/android-developer/answer/9842756#zippy=%2Crequest-an-upload-key-reset) in Google Play Console.
+## 🌐 Free Static Hosting Options
+- **Vercel:** Connect your GitHub repository and set the Root Directory to `web`. Output directory is `dist`.
+- **Netlify:** Set Base directory to `web`, Build command to `npm run build`, and Publish directory to `dist`.
+- **Cloudflare Pages / GitHub Pages:** Point build output to `dist`.
+
+## 🔒 Secure Server-Side AI Architecture
+API keys (`GEMINI_API_KEY`) are NEVER committed or packaged into client-side JavaScript. 
+- In development/offline, a built-in verified exotic pet expert engine provides instant answers and emergency protocols.
+- In production, set `VITE_AI_PROXY_URL` in `.env` to route through a serverless function (e.g. `/api/chat`) that calls the Gemini API securely server-side.
